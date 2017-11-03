@@ -243,8 +243,6 @@ def main():
             dfs(0,0)
             halt()
             spath=astar()
-            turnCW()
-            turnCCW()
             travel(spath)
             turnCW()
             turnCCW()
@@ -253,11 +251,11 @@ def main():
             print("button2 pressed")
             while True:
                 keyPressed=pygame.key.get_pressed()
-                if keyPressed[pygame.K_UP]:
+                if keyPressed[pygame.K_UP] or keyPressed[pygame.K_w]:
                     moveOne()
-                elif keyPressed[pygame.K_LEFT]:
+                elif keyPressed[pygame.K_LEFT] or keyPressed[pygame.K_a]:
                     turnCCW()
-                elif keyPressed[pygame.K_RIGHT]:
+                elif keyPressed[pygame.K_RIGHT] or keyPressed[pygame.K_d]:
                     turnCW()
                 elif keyPressed[pygame.K_q]:
                     pygame.quit()
